@@ -14,7 +14,7 @@ public class CategoryRestController {
     final CategoryService categoryService;
 
     @PostMapping("/save")
-    public ResponseEntity save (@RequestBody Category category){
+    public ResponseEntity save (@RequestBody @Valid Category category){
         return categoryService.save(category);
     }
 
@@ -29,7 +29,7 @@ public class CategoryRestController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity update (@RequestBody Category category){
+    public ResponseEntity update (@RequestBody @Valid Category category){
         return categoryService.update(category);
     }
 
